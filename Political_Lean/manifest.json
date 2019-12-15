@@ -1,0 +1,26 @@
+{
+  "name": "Political Lean Score",
+  "version": "1.0",
+  "description": "Scrape web and build political lean score",
+  "permissions": ["activeTab","tabs", "declarativeContent", "storage","<all_urls>","https://us-central1-braided-upgrade-262021.cloudfunctions.net/function-1"],
+  "background": {
+    "scripts": ["background.js"],
+    "matches": ["<all_urls>"],
+    "persistent": true
+  },
+    "browser_action": {
+     "default_icon": {
+        "16": "images/get_started16.png"
+      },
+      "default_title": "Title",
+      "default_popup": "popup.html"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"]
+  }],
+  "icons": {
+    "16": "images/get_started16.png"
+  },
+  "manifest_version": 2
+}
